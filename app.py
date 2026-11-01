@@ -97,6 +97,7 @@ def run_download(url, mode, resolution, job_id):
         'progress_hooks': [make_progress_hook(job_id)],
         'outtmpl': output_template,
         'cookiefile': 'cookies.txt',
+        'extractor_args': {'youtube': {'player_client': ['mweb', 'tv']}},
     }
 
     if mode == 'audio':
