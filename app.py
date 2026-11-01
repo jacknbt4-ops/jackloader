@@ -94,10 +94,10 @@ def run_download(url, mode, resolution, job_id):
     output_template = os.path.join(DOWNLOAD_FOLDER, "%(title)s.%(ext)s")
 
     ydl_opts = {
-        'progress_hooks': [make_progress_hook(job_id)],
-        'outtmpl': output_template,
-        'cookiefile': 'cookies.txt',
-    }
+    'progress_hooks': [make_progress_hook(job_id)],
+    'outtmpl': output_template,
+    'cookiefile': 'cookies.txt',
+}
 
     if mode == 'audio':
         ydl_opts.update({
