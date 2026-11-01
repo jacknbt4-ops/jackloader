@@ -102,7 +102,7 @@ def run_download(url, mode, resolution, job_id):
 
     if mode == 'audio':
         ydl_opts.update({
-            'format': 'bestaudio/best',
+            'format': 'bestaudio/best/best',
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
@@ -111,12 +111,12 @@ def run_download(url, mode, resolution, job_id):
         })
     elif mode == 'resolution':
         ydl_opts.update({
-            'format': f'bestvideo[height<={resolution.replace("p", "")}]+bestaudio/best',
+            'format': f'bestvideo[height<={resolution.replace("p", "")}]+bestaudio/best/best',
             'merge_output_format': 'mp4',
         })
     else:
         ydl_opts.update({
-            'format': 'bestvideo+bestaudio/best',
+            'format': 'bestvideo+bestaudio/best/best',
             'merge_output_format': 'mp4',
         })
 
